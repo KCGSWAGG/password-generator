@@ -21,3 +21,11 @@ function generatePassword() {
   var useLowercase = confirm("Include lowercase letters?");
   var useNumeric = confirm("Include numeric characters?");
   var useSpecial = confirm("Include special characters?");
+
+  for (var i = 0; i < length; i++) {
+    var randomIndex = Math.floor(Math.random() * characters.length);
+    password += characters.charAt(randomIndex);
+  }
+
+  return password;
+}
