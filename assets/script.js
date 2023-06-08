@@ -22,6 +22,19 @@ function generatePassword() {
   var useNumeric = confirm("Include numeric characters?");
   var useSpecial = confirm("Include special characters?");
 
+  // Validate at least one character type is selected
+  if (!(useUppercase || useLowercase || useNumeric || useSpecial)) {
+    alert("You must select at least one character type. Please try again.");
+    return;
+  }
+
+  // Generate password
+  var characters = "";
+  if (useUppercase) characters += uppercase;
+  if (useLowercase) characters += lowercase;
+  if (useNumeric) characters += numeric;
+  if (useSpecial) characters += special;
+
   for (var i = 0; i < length; i++) {
     var randomIndex = Math.floor(Math.random() * characters.length);
     password += characters.charAt(randomIndex);
