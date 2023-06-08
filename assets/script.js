@@ -29,3 +29,15 @@ function generatePassword() {
 
   return password;
 }
+
+// Get the elements
+var generateButton = document.getElementById("generate");
+var passwordTextarea = document.getElementById("password");
+
+// Add click event listener to the button
+generateButton.addEventListener("click", function () {
+  var password = generatePassword();
+  if (password) {
+    passwordTextarea.value = password;
+  }
+});
